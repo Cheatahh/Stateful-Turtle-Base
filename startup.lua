@@ -1,23 +1,31 @@
 --- EDIT SECTION --- Script: Example turtle program
 
+-- Example Display Name
 local name = "Example Turtle Program"
 
+-- Example Config
 local config = {
     steps = { 0 } -- default value
 }
 
+-- Function to build the initial config
+-- Only called on initial turtle setup
 local function buildConfig()
     print("Enter the amount of steps:")
     config.steps[1] = tonumber(io.read())
     print("Set config.steps to ", config.steps[1])
 end
 
+-- Intruction Lookup
+-- Mapping   Char => Function
 local instructions = {
     m = function()
         turtle.forward()
     end
 }
 
+-- Function to build the program (string of instruction chars)
+-- Program will be looped
 local function buildProgram()
     return string.rep("m", config.steps[1]), false
 end
