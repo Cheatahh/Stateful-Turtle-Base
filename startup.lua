@@ -25,7 +25,7 @@ local instructions = {
 }
 
 -- Function to build the program (string of instruction chars)
--- Program will be looped
+-- Program will be looped, if second return value is set to true
 local function buildProgram()
     return string.rep("m", config.steps[1]), false
 end
